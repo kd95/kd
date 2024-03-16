@@ -3,49 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Basic HTML Page</title>
+    <title>Bouncing QR Code</title>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@latest/qrcode.min.js"></script>
     <style>
-        /* CSS styles can go here */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
+        /* CSS styles for QR code container */
+        #container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 50px auto;
         }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-        /* Add more styles as needed */
     </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Basic HTML Page</h1>
-    </header>
-    <div class="container">
-        <h2>This is a Heading</h2>
-        <p>This is a basic HTML page. You can add your content here.</p>
-        <p>HTML stands for HyperText Markup Language, which is the standard markup language for creating web pages.</p>
-        <ul>
-            <li>You can create lists:</li>
-            <li>Unordered lists like this one</li>
-            <li>Or ordered lists</li>
-        </ul>
-        <p><a href="#">This is a link</a> to somewhere.</p>
-        <p>You can <strong>bold</strong>, <em>italicize</em>, or <u>underline</u> text.</p>
-        <p>And you can add images:</p>
-        <img src="https://via.placeholder.com/300" alt="Placeholder Image">
+    <div id="container">
+        <!-- QR code will be dynamically generated here -->
     </div>
-    <footer>
-        <p>&copy; 2024 My Basic HTML Page. All rights reserved.</p>
-    </footer>
+
+    <script>
+        // JavaScript to generate QR code using qrcode.js
+        var qrCodeContainer = document.getElementById('container');
+        var qrCode = new QRCode(qrCodeContainer, {
+            text: "https://www.example.com",
+            width: 300,
+            height: 300
+        });
+    </script>
 </body>
 </html>
